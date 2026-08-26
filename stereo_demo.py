@@ -207,7 +207,7 @@ for name, Zt, (u, v) in centers:
     d_meas = float(np.median(disp[max(0, v - 25):v + 25, max(0, u - 25):u + 25]))
     print(f"{name:8s}  {Zt:6.2f}   {Zm:6.2f}   {abs(Zm - Zt) * 100:6.2f}   {d_meas:6.1f}")
 
-# 视差图 / 深度图可视化（先设置中文字体，避免标题变方框）
+# 视差图 / 深度图可视化
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
