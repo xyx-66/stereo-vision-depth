@@ -4,7 +4,7 @@
 
 #### 运行效果
 
-运行完会在终端打印每个物体的"真实距离 vs 实测距离"：
+运行完会打印每个物体的"真实距离和实测距离"：
 
 | 物体 | 真值(m) | 实测(m) | 误差(cm) | 视差(px) |
 | --- | --- | --- | --- | --- |
@@ -18,7 +18,7 @@
 
 ![双目测距结果](images/stereo_result.png)
 
-可以看到：**越近的物体视差越大，误差也越小**，这和双目测距的理论完全一致。
+可以看到：**越近的物体视差越大，误差也越小**，这和双目测距的理论一致。
 
 #### 项目流程
 
@@ -40,35 +40,21 @@
 cd stereo-vision-depth
 ```
 
-2. 创建虚拟环境（推荐，不会污染系统 Python）：
-
-```bash
-# Windows
-python -m venv .venv
-.venv\Scripts\activate
-
-# Mac / Linux
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-3. 安装依赖：
+2. 安装依赖：
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. 运行：
+3. 运行：
 
 ```bash
 python stereo_demo.py
 ```
 
-5. 打开 `images/` 文件夹查看生成的结果图。
+4. 打开 `images/` 文件夹查看生成的结果图。
 
-#### 原理（一句话版）
-
-双目测距的核心公式：
+#### 原理
 
 ```
 距离 Z = 焦距 f × 基线 B / 视差 d
@@ -90,18 +76,12 @@ stereo-vision-depth/
 └── images/           # 运行后生成的结果图
 ```
 
-#### 常见问题（踩坑记录）
-
-**Q：pip install 装 opencv 很慢 / 卡住不动？**
-A：网络原因，可以换国内镜像源：`pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple`
-
-**Q：提示找不到 cv2？**
-A：没有成功安装 opencv-python，重新执行 `pip install -r requirements.txt`，确认提示 `Successfully installed opencv-python`。
+#### 常见问题
 
 **Q：为什么不用真实摄像头？**
-A：真实摄像头需要先买双目模组、拍棋盘格标定，新手门槛高。用合成数据可以把"测距算法"这部分先练熟，理解了原理再上真实设备会轻松很多。
+答：真实摄像头需要先买双目模组、拍棋盘格标定，新手门槛高。用合成数据可以把"测距算法"这部分先练熟，理解了原理再上真实设备会轻松很多。
 
 #### 说明
 
-- 这是我学习计算机视觉做的练习项目，代码和注释都比较新手向，欢迎提建议。
+- 这是我学习计算机视觉做的练习项目，代码都比较基础。
 - 数据是程序合成的，所以测出来的误差非常小；真实摄像头会有畸变、噪声，误差会比这个大得多。
