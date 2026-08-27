@@ -18,6 +18,10 @@
 
 ![双目测距结果](images/stereo_result.png)
 
+运行效果截图：
+
+![运行效果截图](images/result_screenshot.png)
+
 可以看到：**越近的物体视差越大，误差也越小**，这和双目测距的理论一致。
 
 #### 项目流程
