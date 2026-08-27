@@ -1,13 +1,3 @@
-﻿# -*- coding: utf-8 -*-
-"""
-双目测距 · 合成演示（不需要摄像头和真实棋盘格）
-
-流程：合成棋盘格照片 → 单目标定 → 双目标定(求基线) → 极线校正
-      → 合成"带真值深度"的左右场景图 → SGBM 视差 → 深度 → 和真值对比
-
-环境：Python 3.10+，需要 opencv-python、numpy、matplotlib
-运行：python stereo_demo.py   （结果图存到 ../../images/ 即 outputs/images/）
-"""
 import os
 import sys
 try:
